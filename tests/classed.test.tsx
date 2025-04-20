@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
-import { Button } from '../src/Button';
+import classed from '../src/classed';
 
 test('The button should have correct background color', async () => {
-  render(<Button backgroundColor="#ccc" label="Demo Button" />);
+  const Button = classed('button')
+  render(<Button style={{backgroundColor:"#ccc"}}>Demo Button</Button>);
   const button = screen.getByText('Demo Button');
   expect(button).toHaveStyle({
     backgroundColor: '#ccc',
